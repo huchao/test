@@ -1,0 +1,18 @@
+def path = System.properties.get("furion_make") == "1" ? "comp-crashreport${File.separator}" : ""
+
+if(path == ""){
+    include ':demo'
+}
+
+include ':crashreport'
+
+include ':crashreport-wrapper'
+include ':crashreport-wrapper-api'
+include ':crashreport-wrapper-debug'
+
+
+project(':crashreport').projectDir = new File("${path}crashreport")
+
+project(':crashreport-wrapper').projectDir = new File("${path}crashwrapper/crashreport-wrapper")
+project(':crashreport-wrapper-api').projectDir = new File("${path}crashwrapper/crashreport-wrapper-api")
+project(':crashreport-wrapper-debug').projectDir = new File("${path}crashwrapper/crashreport-wrapper-debug")
