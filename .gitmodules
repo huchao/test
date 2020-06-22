@@ -1,0 +1,3 @@
+[submodule "mailassist_crashfix"]
+	path = mailassist_crashfix
+	url = https://github.com/huchao/mailassist_crashfix.git
